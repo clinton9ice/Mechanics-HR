@@ -1,3 +1,3 @@
-#Mechanics-HR 
-#High Tech Company
+## Mechanics-HR ##
+** High Tech Company **
 
