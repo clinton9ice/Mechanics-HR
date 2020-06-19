@@ -68,7 +68,7 @@ $(window).scroll(function(){
     imgFunction()
   }
   ScrollOut({
-    targets: ".more-section--animation"
+    targets: ".more-section--animation" 
   })
 })
 })
