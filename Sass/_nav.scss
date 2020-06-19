@@ -1,0 +1,383 @@
+@import "./config";
+nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  padding: 0 12px;
+  line-height: 55px;
+  background-color: #fff;
+  @include smallerScreen{
+    line-height: 2;
+  }
+  div{
+    display: inline-block;
+    &.form{
+      float: right;
+    }
+  }
+  .navLogo{
+    float: left;
+    position: relative;
+    margin: 0;
+    font-size: 30px;
+
+span{
+  color: #ff9d2d;
+  font-weight: 600;
+  text-shadow: 0 3px 3px rgba(212, 212, 212, 0.322);
+  position: relative;
+  @include smallerScreen{
+    top: -10px;
+  }
+  @include smallerScreen{
+    font-size: 20px;
+    margin: 0;
+     }
+
+}
+    
+    img{
+      height: 30px;
+     margin-top: 20px;
+    }
+  }
+
+  .navLinks{
+    position: relative;
+   margin: 15px 0 0 90px;
+   display: inline-block;
+   transition: all 0.5s linear;
+    @include lgScreen{
+      margin: 15px 0;
+      left: 15px;
+    }
+    @include mediumScreen{
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      width: 100%;
+      transform: translate(-50%);
+      display: none;
+    }
+  
+     ul{
+      margin: 0;
+      padding: 0;
+      position: relative;
+      li{
+        display: inline-block;
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        @include mediumScreen{
+          display: block;
+          margin: 15px 0;
+        }
+      .fa-caret-down{
+          font-weight: bold;
+          font-size: 20px;
+          display: none;
+         @include mediumScreen{
+          float: right;
+          margin: 12px 15px 0 0;
+          display: block;
+         }
+         &.active{
+          transform: rotate(180deg);
+          transition: transform 0.5s ease;
+        }
+        }
+    a{
+      margin: 0 20px;
+      padding:10px 5px;
+      font-weight: bold;
+      font-size: 15px;
+      color: rgb(42, 42, 43);
+        text-transform: uppercase;
+        text-decoration: none;
+        &:hover{
+          color: rgb(143, 138, 143);
+        }
+    }
+    .subList{
+position: absolute;
+width: 500px;
+transform: translateX(-35%);
+animation: slideDown 0.5s ease forwards alternate;
+opacity: 0;
+display: none;
+box-shadow:0 4px 32px 0 rgba(51,62,99,0.14);
+background-color: #fff;
+@keyframes slideDown {
+  to{
+    margin-top: 10px;
+    opacity: 1;
+  }
+}
+@include mediumScreen{
+  position: relative;
+ width: 100%;
+ transform: translate(0);
+}
+
+ul {
+  li{
+    display: block;
+    line-height: unset;
+    padding: 5px 8px;
+    margin: 0 0 12px;
+    cursor: default;
+    
+   &.covid{
+     background-color: rgba(250, 218, 203, 0.425);
+   }
+   a{
+     display: flex;
+     align-items: center;
+     justify-content: unset;
+   }
+    span{
+a{
+  display: block;
+}
+      h3{
+        color: #000;  
+        font-size: 15px;
+      }
+   &.icon{
+    margin-right: 15px;
+    i{
+      font-size: 20px;
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.fa-user{
+        background-color: rgba(213, 213, 248, 0.541);
+        color: rgb(104, 104, 241);
+      }
+      &.fa-usd{
+        background-color: rgba(161, 228, 161, 0.384);
+        color: rgb(12, 202, 12);
+      }
+      &.fa-plus{
+        background-color: rgba(252, 215, 228, 0.438);
+        color: rgb(238, 15, 52);
+      }
+      &.fa-clock{
+        color: orange;
+        background-color: rgba(255, 224, 168, 0.521);
+      }
+    }
+   }
+   p{
+ text-transform: none;
+   color: #b9b5b5;
+   font-size: 13px;
+   margin: 0;
+   line-height: 1;
+   }
+    }
+
+&.footer{
+  background-color: rgba(235, 235, 241, 0.288);
+  padding: 20px 12px;
+  margin: 0;
+  clip-path: polygon(00 00, 00 100%, calc(100% + 70vw) 100%);
+  a{
+    display: block;
+    margin: 15px 0;
+    font-size: 17px;
+  }
+  .fas{
+    color: black;
+&.fa-comment-alt{
+  font-weight: 400;
+}
+&.fa-link{
+  border: 1px solid rgb(67, 116, 253);
+}
+  }
+}
+
+  }
+}
+&::before{
+  position: absolute;
+  left: 38%;
+  top: -15px;
+  content: "";
+  width: 25px;
+  height:25px;
+background-color: #fff;
+ border-right: none;
+ border-bottom: 0;
+transform: translateX(45px) rotate(45deg);
+@include mediumScreen{
+  display: none;
+}
+}    
+}
+
+&:hover{
+  .subList{
+    display: block;
+    @include mediumScreen{
+    display: none;
+    }
+  }
+
+}
+&.platform{
+  .subList{
+    i:first-child{
+color: rgb(255, 45, 80);
+    }
+    &.active{
+      display: block;
+      position: relative;
+    }
+  }
+}
+&.tools{
+  .subList{
+    &::before{
+     background-color: #fff;
+     border: none;
+    }
+    p{
+      a{
+        display: block;
+        color: #706b6b;
+        font-size: 15px;
+        text-transform: capitalize;
+      }
+    }
+    .fa-layer-group{
+      color: rgb(43, 34, 90);
+    }
+  
+    .fa-comment-dots{
+      color: #706b6b;
+    }
+    &.active{
+      display: block;
+      position: relative;
+    }
+  }
+}
+
+&.company{
+  .fa-assistive-listening-systems{
+border: 1px solid orangered;
+  }
+  .fa-balance-scale{
+    border: 1px solid rgb(53, 34, 85);
+  }
+.subList{
+  &.active{
+    display: block;
+
+  }
+}
+}
+      }
+    }
+    &.active{
+      display: block;
+ 
+    }
+ 
+  }  
+
+
+  .form{
+    margin-top: 15px;
+    text-transform: uppercase;
+    span{
+      margin: 0 20px;
+      a{
+        text-decoration: none;
+        font-weight: 700;
+        color: inherit;
+      &.login{
+        padding: 7px 20px;
+       background-color: orangered;
+       color: #fff;
+       @include mediumScreen{
+        background-color: transparent;
+        color: orangered;
+       }
+       &:hover{
+         background-color: rgb(248, 87, 29);
+         color: #fff;
+       }
+      }
+      &:hover{
+        color: rgb(143, 138, 143);
+      }
+      }
+      @include smallerScreen{
+   font-size: 14px;
+      }
+        @include mediumScreen{
+         .sign{
+          display: none;
+         }
+         margin: 0;
+        }
+
+    }
+
+  .mobile{
+    padding: 0 10px;
+    background-color: orangered;
+    color: #fff;
+    line-height: 2;
+    cursor: pointer;
+    display: none;
+    @include mediumScreen{
+    display: inline-block;
+    }
+    .fa-times{
+      display: none;
+    }
+    &.active{
+      .fa-times{
+        display: inline-block;
+        transition: all 0.5s ease;
+      }
+      .fa-bars{
+        display: none;
+      }
+    }
+  }
+  }
+
+  &.active{
+    position: fixed;
+    left: 0;
+    transition: position 0.5s ease;
+    animation: fade-in 0.5s ease forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+    @keyframes fade-in {
+      from{
+        opacity: 0.5;
+        transform: scaleY(-40px);
+      }
+      to{
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+    .subList{
+      position: absolute;
+    }
+  }
+}
