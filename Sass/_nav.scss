@@ -3,7 +3,7 @@ nav{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 900;
+  z-index: 1900;
   width: 100%;
   padding: 0 12px;
   line-height: 55px;
@@ -24,7 +24,7 @@ nav{
     font-size: 30px;
 
 span{
-  color: #ff9d2d;
+  color: $primary-color;
   font-weight: 600;
   text-shadow: 0 3px 3px rgba(212, 212, 212, 0.322);
   position: relative;
@@ -60,6 +60,8 @@ span{
       width: 100%;
       transform: translate(-50%);
       display: none;
+      background-color: #fff;
+
     }
   
      ul{
@@ -94,11 +96,11 @@ span{
       padding:10px 5px;
       font-weight: bold;
       font-size: 15px;
-      color: rgb(42, 42, 43);
+      color: $link-color;
         text-transform: uppercase;
         text-decoration: none;
         &:hover{
-          color: rgb(143, 138, 143);
+          color: rgb(138, 139, 143);
         }
     }
     .subList{
@@ -109,6 +111,7 @@ animation: slideDown 0.5s ease forwards alternate;
 opacity: 0;
 display: none;
 box-shadow:0 4px 32px 0 rgba(51,62,99,0.14);
+z-index: 900;
 background-color: #fff;
 @keyframes slideDown {
   to{
@@ -119,13 +122,14 @@ background-color: #fff;
 @include mediumScreen{
   position: relative;
  width: 100%;
- transform: translate(0);
+ transform: translateX(0);
 }
 
 ul {
+  position: static;
   li{
     display: block;
-    line-height: unset;
+    line-height: 1.2;
     padding: 5px 8px;
     margin: 0 0 12px;
     cursor: default;
@@ -136,7 +140,8 @@ ul {
    a{
      display: flex;
      align-items: center;
-     justify-content: unset;
+     justify-content: normal;
+     margin: 5px 0;
    }
     span{
 a{
@@ -274,7 +279,7 @@ color: rgb(255, 45, 80);
 
 &.company{
   .fa-assistive-listening-systems{
-border: 1px solid orangered;
+border: 1px solid $primary-color;
   }
   .fa-balance-scale{
     border: 1px solid rgb(53, 34, 85);
@@ -282,7 +287,6 @@ border: 1px solid orangered;
 .subList{
   &.active{
     display: block;
-
   }
 }
 }
@@ -336,7 +340,7 @@ border: 1px solid orangered;
 
   .mobile{
     padding: 0 10px;
-    background-color: orangered;
+    background-color: $primary-color;
     color: #fff;
     line-height: 2;
     cursor: pointer;
@@ -344,7 +348,7 @@ border: 1px solid orangered;
     @include mediumScreen{
     display: inline-block;
     }
-    .fa-times{
+    .fa-times{ 
       display: none;
     }
     &.active{
@@ -376,8 +380,18 @@ border: 1px solid orangered;
         transform: scaleY(1);
       }
     }
-    .subList{
-      position: absolute;
+ .navLinks{
+   @include mediumScreen{
+    position: absolute;
+    height: 500px;
+    overflow-y: auto;
+   .subList{
+    ul{
+      position: relative;
+      display: block;
     }
+   }
+   }
+ }
   }
 }

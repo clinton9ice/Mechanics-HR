@@ -1,13 +1,50 @@
 
 
-let subList =document.querySelector(".subList")
+let subList =document.querySelectorAll(".subList")
 let list = document.querySelectorAll(".collapsible")
 let navlinks = document.querySelector(".navLinks")
 let mobileBtn = document.querySelector(".mobile")
 let ico = document.querySelector(".fa-caret-down")
 let h = window.scrollY;
 let index = 0;
+let right_cursor = document.querySelector('#right-cursor')
+let left_cursor = document.querySelector('#left-cursor')
+let testimonyCard = document.querySelector(".scroll-card").children;
+let eachId = document.querySelector("#testimonialId").children
+right_cursor.onclick = carousel =>{
+  if(index >= testimonyCard.length -1){
+    index = 0;
+    for(let i = 0; i < testimonyCard.length; i++){
+      testimonyCard[i].classList.add("notActive")
+    }
+    testimonyCard[index].classList.remove("active")
+  }else{
+    index++
+  }
+  console.log(index)
+ Carousel()
+  }
 
+  left_cursor.onclick = carouselSubtract =>{
+   if(index == 0){
+  index = testimonyCard.length -1
+  for(let i = 0; i < testimonyCard.length; i++){
+    testimonyCard[i].classList.add("notActive")
+  }
+  testimonyCard[index].classList.remove("active")
+   }else{
+     index--
+   }
+  Carousel()
+  }
+
+  //carousel
+  function Carousel(){
+    for(let i = 0; i < testimonyCard.length; i++){
+      testimonyCard[i].classList.add("notActive")
+    }
+    testimonyCard[index].classList.add("active")
+  }
 function drop(e, icon){
  e.classList.toggle("active")
  icon.classList.toggle("active")
@@ -28,7 +65,7 @@ let headerContent = {
 $(document).ready(function(){
   let email = document.querySelector("#mail")
   let mailFormat =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  let viewWidth = window.innerWidth
+  let viewWidth = window.innerWidth;
   $("#headerTitle").html(headerContent.title)
 $("#formTxt").html(headerContent.formTxt)
 $('.ads').html(headerContent.formCaption)
@@ -60,28 +97,35 @@ input: function(){
   else{
     $(".fa-envelope").css("color", "red")
   }
-}, 
+}
 })
 $(window).scroll(function(){
-  Navfunction()
   if(Math.ceil(viewWidth) >= 1300){
     imgFunction()
   }
+  //Nav Function
+  if(window.scrollY >= 200){
+    $('nav').addClass("active")
+   }else{
+     $('nav').removeClass("active")
+   }
   ScrollOut({
     targets: ".more-section--animation" 
   })
 })
-})
-//Nav TRigger
-function Navfunction(){
-  let Scrollheight = window.scrollY;
-  let nav = document.querySelector("nav")
-  if(Math.ceil(Scrollheight) >= 200){
-   nav.classList.add("active")
-  }else{
-    nav.classList.remove("active")
-  }
+if(Math.ceil(viewWidth) <= 900){
+  $('.platform').click(function(){
+    $("#platform").slideToggle("slow")
+  })
+  $('#company').click(function(){
+    $('#companyList').slideToggle("slow")
+  })
+  $('#tools').click(function(){
+    $('#toolList').slideToggle("slow")
+  })
 }
+
+})
 
 //Img Scroll Magic
 function imgFunction(){
@@ -117,3 +161,4 @@ function imgFunction(){
     container.classList.remove("fade-away")
   }
 }
+

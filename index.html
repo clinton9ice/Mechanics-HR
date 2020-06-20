@@ -22,7 +22,7 @@
   <ul id="nav-links">
     <li class="platform collapsible"><a> platform</a> 
       <i class="fas fa-caret-down"></i>
-<div class="subList">
+<div class="subList" id="platform">
 <ul>
 <li class="covid">
   <a href="#">
@@ -108,9 +108,9 @@
 
     <li><a href="#">Pricing</a></li>
 
-    <li class="tools collapsible"><a> Tools</a> 
+    <li class="tools collapsible" id="tools"><a> Tools</a> 
       <i class="fas fa-caret-down"></i>
-      <div class="subList">
+      <div class="subList" id="toolList">
 <ul>
 <li>
 <a>
@@ -154,9 +154,9 @@ Support
 
       </li>
 
-    <li class="company collapsible"><a href="#">Company</a>
+    <li class="company collapsible" id="company"><a href="#">Company</a>
       <i class="fas fa-caret-down"></i>
-      <div class="subList">
+      <div class="subList" id="companyList">
         <ul>
           <li>
             <a href="#">
@@ -242,14 +242,15 @@ Support
 <span class="cols col-2">
   
   <div class="imgContainer">
-    <svg class="logo-mask--2 full" width="595px" height="914px" viewBox="0 0 595 914" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg class="logo-mask--2 full" width="600px" height="914px" viewBox="0 0 595 914" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g stroke="none" fill="#fff" fill-rule="evenodd">
-        <polygon class="path--top" points="500 160 0 0 595 0" style="transform: translate3d(23.7871%, -3.33019%, 0px);"></polygon>
+        <polygon class="path--top" points="500 160 0 0 595 0" style="transform: translate3d(53.7871%, -3.33019%, 0px);">
+        </polygon>
         <polygon class="path--center" points="595 245 595 351 133.97351 592.748344 122 599 122.034655 599.008719 0 663 0 557 358.680222 368.918942 359 369 472 310 471.352829 309.836836" style="transform: translate3d(0%, 0%, 0px);">
         </polygon>
         <polygon class="path--bottom-1" points="595 447 595 630 358.678785 620.919696" style="transform: translate3d(5.91%, 0.8865%, 0px);">
         </polygon>
-        <!-- <polygon class="path--bottom-2" points="595 718 595 822 115.16129 698.612903 245.75311 630.134503" style="transform: translate3d(23.7871%, 4.04381%, 0px);"></polygon> -->
+        <polygon class="path--bottom-2" points="595 718 595 822 115.16129 698.612903 245.75311 630.134503" style="transform: translate3d(23.7871%, 4.04381%, 0px);"></polygon>
         <polygon class="path--bottom" points="595 909 595 914 0 914 0 759" style="transform: translate3d(-23.7871%, 11.8936%, 0px);"></polygon>
         <polygon class="path--top-1" points="0 462 0 278 236.090603 337.844693" style="transform: translate3d(-5.91%, -0.8865%, 0px);"></polygon>
         <polygon class="path--top-2" points="5.68434189e-14 191 5.68434189e-14 87 478.913273 210.149127 348.329693 278.82041" style="transform: translate3d(-23.7871%, -4.04381%, 0px);"></polygon>
@@ -604,8 +605,13 @@ moving to our digital platform.
   <section class="roller-coaster testimonials">
     <h3 class="testimonials-alt__title">
       Here’s what our customers say&nbsp;about us                    </h3>
+      <div class="carousel-controls">
+        <span class="icon"><i class="fa fa-long-arrow-left" id='left-cursor'></i></span>
+        <span class="icon"><i class="fa fa-long-arrow-right" id="right-cursor"></i></span>
+       
+      </div>
 <div class="section max-size">
-<div class=" imgContainer">
+<div class=" imgContainer" id="testimonialId">
   <div class="col-1 active">
 <img src="./img/lucas-sankey-bXq8pVfP-fY-unsplash.jpg" alt="Lucas">
   </div>
@@ -676,23 +682,25 @@ moving to our digital platform.
     </div>
   </section>
 
-  <section class="get-ready">
-    <div class="two-col-sec">
-      <span class="col-one">
-        <img class="person d-none d-md-block" src="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05@2x.png" alt="" data-retina-url="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05@2x.png" data-loading-step="5" data-lazy-url="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05.png" data-loaded="true">
-        <div class="text">
-          <p>We're here to help!<br>Ask us anything, or&nbsp;schedule a&nbsp;customized demo.
-          </p>			
-          	<a href="#" class="ready-footer-orange-button drift-button report-ga optimizely-cta-contact-tracking" data-interactionid="93505" data-ga="Start Chat - Standard Footer CTA">Talk to Advisor</a>
-        </div>
-      </span>
-      <span class="col-two">
-        <div class="cta-text">
-          <h2>Interactive Demo</h2><p>Get familiar with the Platform by exploring your very own demo account.</p>                <a href="#" class="ready-footer-blue-button report-ga optimizely-cta-tracking" data-toggle="modal" data-target="#get-started-modal" data-ga="Start Trial - Standard Footer CTA">Try 2 weeks free</a>
-        </div>
-      </span>
-    </div>
-  </section>
+<!-----Interactive=Demo-->
+<section class="get-ready">
+<div class="two-col-sec">
+<span class="col-one">
+<img class="person d-none d-md-block" src="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05@2x.png" alt="" data-retina-url="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05@2x.png" data-loading-step="5" data-lazy-url="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/people/person-05.png" data-loaded="true">
+<div class="text">
+<p>We're here to help!<br>Ask us anything, or&nbsp;schedule a&nbsp;customized demo.
+</p>			
+<a href="#" class="ready-footer-orange-button drift-button report-ga optimizely-cta-contact-tracking" data-interactionid="93505" data-ga="Start Chat - Standard Footer CTA">Talk to Advisor</a>
+</div>
+</span>
+<span class="col-two">
+<div class="cta-text">
+<h2>Interactive Demo</h2><p>Get familiar with the Platform by exploring your very own demo account.</p>                <a href="#" class="ready-footer-blue-button report-ga optimizely-cta-tracking" data-toggle="modal" data-target="#get-started-modal" data-ga="Start Trial - Standard Footer CTA">Try 2 weeks free</a>
+</div>
+</span>
+</div>
+</section>
+
   <!-----Footer-links---->
   <section class="footerlinks">
   <div class="col-36 max-size">
@@ -796,13 +804,15 @@ moving to our digital platform.
   </div>
   </div>
   </section>
+
 <!---Chat-bot-->
   <div class="assistant">
     <i class="far fa-comment-alt"></i>
   </div>
+
   <footer>
     <div class="footer--sub-content-links ">
-      <img src="https://www.zenefits.com/wp-content/themes/zenefits-website/dist/img/logo-icon.svg" class="footer-logo d-none d-sm-inline-block" alt="Zenefits logo">
+      <img src="./img/signal-tower-152-275123.png" class="footer-logo " alt="Mehanics logo">
 
       <ul id="sub-footer-left-content" class="nav ml-n1 ml-sm-0">
           <li class="menu-item">
@@ -818,7 +828,12 @@ moving to our digital platform.
                       <li class="menu-item">
               <a href="#">Do Not Sell My Personal Information</a>
           </li>
-                  </ul>
+    </ul>
+    <div class="social-icons">
+      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+      <a href="#" class="linkedin"><i class="fa fa-linkedin" class="twitter"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
   </div>
   </footer>
 </body>

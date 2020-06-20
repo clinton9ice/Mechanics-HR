@@ -1,0 +1,174 @@
+section.testimonials{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+  top: 420px;
+  padding: 0;
+  &::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 1700px;
+    background-color: rgba(236, 237, 247, 0.671);
+    transform: rotate(-10deg) translate(-20px,0);
+  }
+/*Testimonial-title*/
+  .testimonials-alt__title{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 50px;
+    color: rgb(8, 8, 46);
+  }
+  @include mediumScreen{
+    &::before{
+      transform: rotate(-4deg) translate(-20px,0);
+    }
+    .testimonials-alt__title{
+      font-size: 2.5rem;
+    }
+  }
+  .section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 900;
+
+  }
+  /*====Testimonial-cards===*/
+  .scroll-card{
+    width: 1170px;
+height: 500px;
+overflow-x: auto;
+ float: right;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 900;
+ position: absolute;
+ left: 150px;
+ @include mediumScreen{
+   left: 0;
+ }
+&::-webkit-scrollbar{
+opacity: 0;
+}
+    span{
+float: right;
+clear: left;
+margin: auto 20px;
+min-width: 350px;
+height: 330px;
+padding: 25px;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: -0.3px;
+background-color: rgba(255, 255, 255, 0.788);
+box-shadow: 8px 6px 22px rgba(214, 212, 212, 0.151);
+transition:all 0.5s linear;
+transform: translateX(450px);
+@include mediumScreen{
+transform: translateX(1);
+}
+&.active{
+background-color: #fff;
+animation: fadeIn 0.5s ease forwards;
+@keyframes  fadeIn{
+  from{
+    opacity: 0.5;
+  }to{
+    transform: translateX(450px);
+    opacity: 1;
+  }
+}
+}
+&.notActive{
+  animation: deactive 0.5s linear forwards alternate;
+  @keyframes deactive {
+  to{
+      transform: translateX(200px);
+      display: none;
+    }
+  }
+}
+    }
+  }
+.imgContainer{
+height: 350px;
+ width: 300px;
+ margin: 0;
+ position: relative;
+ @include smallScreen{
+   display: none;
+ }
+ .col-1{
+   position: absolute;
+   left: 0;
+   height: inherit;
+   display: none;
+   box-shadow: 8px 0 30px 0 #dbdde0;
+   background: linear-gradient(rgba(165, 134, 134, 0.288), rgba(10,11,10,0.5));
+   &.active{
+     display: block;
+   }
+ }
+ img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+}
+
+.carousel-controls{
+  float: right;
+  position: absolute;
+  right: 20px;
+  top: 35%;
+  transform: translateY(35%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .icon{
+    position: relative;
+  padding: 10px 2px;
+  text-align: center;
+  font-weight: 400;
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+  background-color: #fff;
+  color: #4e4f52;
+
+  &:nth-child(1){
+    background-color: rgb(209, 211, 218);
+   
+  }
+&:nth-child(2){
+  color: $primary-color;
+  box-shadow: 8px 0px 5px #b9b5b55d;
+  &:before{
+    position: absolute;
+    left:0;
+    bottom: 10px;
+    content: "";
+    left: 0;
+    width:60px;
+    height: 125px;
+    background-color: rgb(209, 211, 218);
+    transform: rotate(-140deg) translate(7px,-10px);
+  }
+}
+    .fa{
+      cursor: pointer;
+      margin: auto 12px;
+      font-size: 2rem;
+    }
+  }
+}
+}
