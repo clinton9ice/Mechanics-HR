@@ -134,6 +134,9 @@ height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include smallScreen{
+    display: none;
+  }
   .icon{
     position: relative;
   padding: 10px 2px;
