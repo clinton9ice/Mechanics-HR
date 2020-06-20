@@ -2470,6 +2470,12 @@ section.testimonials .carousel-controls {
           align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  section.testimonials .carousel-controls {
+    display: none;
+  }
+}
+
 section.testimonials .carousel-controls .icon {
   position: relative;
   padding: 10px 2px;
